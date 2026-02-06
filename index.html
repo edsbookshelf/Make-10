@@ -1,0 +1,69 @@
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Make 10 — Flip & Match (v0.1)</title>
+  <link rel="stylesheet" href="styles.css" />
+  <meta name="theme-color" content="#111111" />
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="title">Make 10</div>
+        <div class="subtitle">Flip &amp; Match</div>
+      </div>
+
+      <div class="hud" aria-label="Game status">
+        <div class="hud-item">
+          <div class="hud-label">Matches</div>
+          <div class="hud-value"><span id="matchesFound">0</span>/<span id="totalPairs">6</span></div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">Streak</div>
+          <div class="hud-value" id="streak">0</div>
+        </div>
+        <div class="hud-item">
+          <div class="hud-label">Moves</div>
+          <div class="hud-value" id="moves">0</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <button id="restartBtn" class="btn" type="button">Restart</button>
+
+        <label class="toggle">
+          <input id="soundToggle" type="checkbox" checked />
+          <span>Sound</span>
+        </label>
+      </div>
+    </header>
+
+    <section class="game">
+      <div id="board" class="board" role="grid" aria-label="Card board"></div>
+    </section>
+
+    <!-- Results Modal -->
+    <section id="modal" class="modal hidden" aria-hidden="true">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <h2 id="modalTitle">You did it!</h2>
+        <p class="modal-stats">
+          Moves: <strong id="finalMoves">0</strong><br />
+          Best streak: <strong id="bestStreak">0</strong>
+        </p>
+        <div class="modal-actions">
+          <button id="playAgainBtn" class="btn primary" type="button">Play Again</button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <span class="small">v0.1 • local-only • no accounts</span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
